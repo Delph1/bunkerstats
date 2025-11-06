@@ -1,0 +1,478 @@
+# Copyright (C) 2025 Andreas Galistel
+# This file is distributed under the same license as the BunkerStats Prediction Plugin plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: BunkerStats Prediction Plugin 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bunkerstats\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-11-06T19:18:59+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: bunkerstats\n"
+
+#. Plugin Name of the plugin
+#: bunkerstats.php
+msgid "BunkerStats Prediction Plugin"
+msgstr ""
+
+#. Description of the plugin
+#: bunkerstats.php
+msgid "Allow readers to predict hockey player stats for a season."
+msgstr ""
+
+#. Author of the plugin
+#: bunkerstats.php
+msgid "Andreas Galistel"
+msgstr ""
+
+#: bunkerstats.php:51
+msgid "BunkerStats"
+msgstr ""
+
+#: bunkerstats.php:54
+#: bunkerstats.php:74
+#: bunkerstats.php:88
+#: bunkerstats.php:396
+msgid "Players"
+msgstr ""
+
+#: bunkerstats.php:57
+#: bunkerstats.php:75
+#: bunkerstats.php:305
+msgid "Seasons"
+msgstr ""
+
+#: bunkerstats.php:60
+#: bunkerstats.php:76
+#: bunkerstats.php:361
+msgid "Forms"
+msgstr ""
+
+#: bunkerstats.php:63
+#: bunkerstats.php:77
+#: bunkerstats.php:419
+msgid "Submissions"
+msgstr ""
+
+#: bunkerstats.php:66
+#: bunkerstats.php:78
+msgid "Statistics"
+msgstr ""
+
+#: bunkerstats.php:71
+msgid "BunkerStats Dashboard"
+msgstr ""
+
+#: bunkerstats.php:72
+msgid "Welcome to BunkerStats! Use the sections below to manage your hockey prediction game."
+msgstr ""
+
+#: bunkerstats.php:74
+msgid "Add, edit, and copy players between seasons."
+msgstr ""
+
+#: bunkerstats.php:75
+msgid "Manage seasons for your prediction games."
+msgstr ""
+
+#: bunkerstats.php:76
+msgid "Create and manage prediction forms for your readers."
+msgstr ""
+
+#: bunkerstats.php:77
+msgid "View and review all user submissions."
+msgstr ""
+
+#: bunkerstats.php:78
+msgid "View summary statistics for all submissions."
+msgstr ""
+
+#: bunkerstats.php:80
+msgid "Shortcodes:"
+msgstr ""
+
+#: bunkerstats.php:82
+msgid "Display a prediction form on any page or post."
+msgstr ""
+
+#: bunkerstats.php:83
+msgid "Show the results table for a form. Add"
+msgstr ""
+
+#: bunkerstats.php:83
+msgid "for final results."
+msgstr ""
+
+#: bunkerstats.php:105
+msgid "Player updated."
+msgstr ""
+
+#: bunkerstats.php:109
+#: bunkerstats.php:146
+#: bunkerstats.php:315
+#: bunkerstats.php:336
+msgid "Invalid input."
+msgstr ""
+
+#: bunkerstats.php:115
+msgid "Edit Player"
+msgstr ""
+
+#: bunkerstats.php:116
+msgid "Name:"
+msgstr ""
+
+#: bunkerstats.php:117
+msgid "Season:"
+msgstr ""
+
+#: bunkerstats.php:119
+#: bunkerstats.php:156
+#: bunkerstats.php:383
+msgid "Select Season"
+msgstr ""
+
+#: bunkerstats.php:125
+msgid "Games Played:"
+msgstr ""
+
+#: bunkerstats.php:126
+msgid "Goals:"
+msgstr ""
+
+#: bunkerstats.php:127
+msgid "Points:"
+msgstr ""
+
+#: bunkerstats.php:128
+msgid "Update Player"
+msgstr ""
+
+#: bunkerstats.php:130
+msgid "Back to Players"
+msgstr ""
+
+#: bunkerstats.php:144
+msgid "Player added."
+msgstr ""
+
+#: bunkerstats.php:152
+#: bunkerstats.php:165
+msgid "Add Player"
+msgstr ""
+
+#: bunkerstats.php:153
+#: bunkerstats.php:204
+#: bunkerstats.php:271
+#: bunkerstats.php:349
+#: bunkerstats.php:396
+msgid "Name"
+msgstr ""
+
+#: bunkerstats.php:162
+msgid "Games Played"
+msgstr ""
+
+#: bunkerstats.php:163
+#: bunkerstats.php:207
+#: bunkerstats.php:274
+#: bunkerstats.php:765
+msgid "Goals"
+msgstr ""
+
+#: bunkerstats.php:164
+#: bunkerstats.php:208
+#: bunkerstats.php:275
+#: bunkerstats.php:765
+msgid "Points"
+msgstr ""
+
+#: bunkerstats.php:179
+msgid "Selected players copied to new season with empty stats."
+msgstr ""
+
+#: bunkerstats.php:181
+msgid "Please select players and a target season."
+msgstr ""
+
+#: bunkerstats.php:188
+msgid "Copy Selected Players to New Season"
+msgstr ""
+
+#: bunkerstats.php:191
+msgid "Select Target Season"
+msgstr ""
+
+#: bunkerstats.php:196
+msgid "Copy to New Season"
+msgstr ""
+
+#: bunkerstats.php:205
+#: bunkerstats.php:272
+#: bunkerstats.php:396
+msgid "Season"
+msgstr ""
+
+#: bunkerstats.php:206
+#: bunkerstats.php:273
+msgid "Games"
+msgstr ""
+
+#: bunkerstats.php:268
+msgid "All Players"
+msgstr ""
+
+#: bunkerstats.php:276
+#: bunkerstats.php:349
+msgid "Actions"
+msgstr ""
+
+#: bunkerstats.php:287
+#: bunkerstats.php:354
+#: bunkerstats.php:508
+#: bunkerstats.php:517
+msgid "Edit"
+msgstr ""
+
+#: bunkerstats.php:312
+msgid "Season updated."
+msgstr ""
+
+#: bunkerstats.php:320
+msgid "Edit Season"
+msgstr ""
+
+#: bunkerstats.php:321
+msgid "Season Name:"
+msgstr ""
+
+#: bunkerstats.php:322
+msgid "Update Season"
+msgstr ""
+
+#: bunkerstats.php:324
+msgid "Back to Seasons"
+msgstr ""
+
+#: bunkerstats.php:334
+msgid "Season added."
+msgstr ""
+
+#: bunkerstats.php:341
+#: bunkerstats.php:343
+msgid "Add Season"
+msgstr ""
+
+#: bunkerstats.php:342
+msgid "Season Name"
+msgstr ""
+
+#: bunkerstats.php:348
+msgid "All Seasons"
+msgstr ""
+
+#: bunkerstats.php:371
+msgid "Form created."
+msgstr ""
+
+#: bunkerstats.php:373
+msgid "Invalid input or no players in selected season."
+msgstr ""
+
+#: bunkerstats.php:379
+#: bunkerstats.php:391
+msgid "Create Form"
+msgstr ""
+
+#: bunkerstats.php:380
+msgid "Form Name"
+msgstr ""
+
+#: bunkerstats.php:389
+#: bunkerstats.php:396
+msgid "Eliminator Question"
+msgstr ""
+
+#: bunkerstats.php:390
+msgid "All players from the selected season will be included in the form."
+msgstr ""
+
+#: bunkerstats.php:395
+msgid "All Forms"
+msgstr ""
+
+#: bunkerstats.php:425
+#: bunkerstats.php:564
+msgid "Select Form"
+msgstr ""
+
+#: bunkerstats.php:437
+msgid "Submission not found."
+msgstr ""
+
+#: bunkerstats.php:465
+msgid "Submission updated."
+msgstr ""
+
+#: bunkerstats.php:469
+#: bunkerstats.php:755
+msgid "Invalid input. Please check your entries."
+msgstr ""
+
+#: bunkerstats.php:474
+msgid "Edit Submission"
+msgstr ""
+
+#: bunkerstats.php:475
+msgid "Alias:"
+msgstr ""
+
+#: bunkerstats.php:476
+#: bunkerstats.php:764
+msgid "Email:"
+msgstr ""
+
+#: bunkerstats.php:477
+msgid "Eliminator Answer:"
+msgstr ""
+
+#: bunkerstats.php:478
+#: bunkerstats.php:536
+#: bunkerstats.php:666
+#: bunkerstats.php:686
+#: bunkerstats.php:765
+msgid "Player"
+msgstr ""
+
+#: bunkerstats.php:478
+msgid "Guessed Goals"
+msgstr ""
+
+#: bunkerstats.php:478
+msgid "Guessed Points"
+msgstr ""
+
+#: bunkerstats.php:493
+msgid "Update Submission"
+msgstr ""
+
+#: bunkerstats.php:495
+msgid "Back to Submissions"
+msgstr ""
+
+#: bunkerstats.php:506
+msgid "Submissions for Form:"
+msgstr ""
+
+#: bunkerstats.php:508
+#: bunkerstats.php:812
+msgid "Alias"
+msgstr ""
+
+#: bunkerstats.php:508
+msgid "Email"
+msgstr ""
+
+#: bunkerstats.php:508
+msgid "Eliminator Answer"
+msgstr ""
+
+#: bunkerstats.php:508
+msgid "Submitted At"
+msgstr ""
+
+#: bunkerstats.php:508
+#: bunkerstats.php:516
+msgid "View"
+msgstr ""
+
+#: bunkerstats.php:527
+msgid "BunkerStats Statistics"
+msgstr ""
+
+#: bunkerstats.php:537
+msgid "Average"
+msgstr ""
+
+#: bunkerstats.php:538
+msgid "Variance"
+msgstr ""
+
+#: bunkerstats.php:539
+#: bunkerstats.php:668
+#: bunkerstats.php:688
+msgid "Min"
+msgstr ""
+
+#: bunkerstats.php:540
+#: bunkerstats.php:669
+#: bunkerstats.php:689
+msgid "Max"
+msgstr ""
+
+#: bunkerstats.php:541
+#: bunkerstats.php:667
+#: bunkerstats.php:687
+msgid "Spread"
+msgstr ""
+
+#: bunkerstats.php:542
+msgid "Count"
+msgstr ""
+
+#: bunkerstats.php:571
+msgid "Select a form to view statistics."
+msgstr ""
+
+#: bunkerstats.php:577
+#: bunkerstats.php:729
+msgid "Form not found."
+msgstr ""
+
+#: bunkerstats.php:588
+msgid "No submissions yet."
+msgstr ""
+
+#: bunkerstats.php:644
+msgid "Player Prediction Statistics"
+msgstr ""
+
+#: bunkerstats.php:664
+msgid "Players with Biggest Spread"
+msgstr ""
+
+#: bunkerstats.php:684
+msgid "Players with Smallest Spread (min 2 guesses)"
+msgstr ""
+
+#: bunkerstats.php:726
+msgid "No form specified."
+msgstr ""
+
+#: bunkerstats.php:734
+msgid "Security check failed. Please try again."
+msgstr ""
+
+#: bunkerstats.php:753
+msgid "Thank you for your submission!"
+msgstr ""
+
+#: bunkerstats.php:763
+msgid "Name (alias):"
+msgstr ""
+
+#: bunkerstats.php:777
+msgid "Eliminator Question:"
+msgstr ""
+
+#: bunkerstats.php:778
+msgid "Submit"
+msgstr ""
+
+#: bunkerstats.php:812
+msgid "Total Score"
+msgstr ""

@@ -1,0 +1,444 @@
+# Copyright (C) 2025 Andreas Galistel
+# This file is distributed under the same license as the BunkerStats Prediction Plugin plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: BunkerStats Prediction Plugin 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bunkerstats\n"
+"POT-Creation-Date: 2025-11-06T19:18:59+01:00\n"
+"PO-Revision-Date: 2025-11-06 19:28+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+"X-Domain: bunkerstats\n"
+
+#. Plugin Name of the plugin
+#: bunkerstats.php
+msgid "BunkerStats Prediction Plugin"
+msgstr "BunkerStats Poängligatips Plugin"
+
+#. Description of the plugin
+#: bunkerstats.php
+msgid "Allow readers to predict hockey player stats for a season."
+msgstr "Låter besökare tippa spelares poängproduktion."
+
+#. Author of the plugin
+#: bunkerstats.php
+msgid "Andreas Galistel"
+msgstr "Andreas Galistel"
+
+#: bunkerstats.php:51
+msgid "BunkerStats"
+msgstr "BunkerStats"
+
+#: bunkerstats.php:54 bunkerstats.php:74 bunkerstats.php:88 bunkerstats.php:396
+msgid "Players"
+msgstr "Spelare"
+
+#: bunkerstats.php:57 bunkerstats.php:75 bunkerstats.php:305
+msgid "Seasons"
+msgstr "Säsonger"
+
+#: bunkerstats.php:60 bunkerstats.php:76 bunkerstats.php:361
+msgid "Forms"
+msgstr "Formuär"
+
+#: bunkerstats.php:63 bunkerstats.php:77 bunkerstats.php:419
+msgid "Submissions"
+msgstr "Inlämningar"
+
+#: bunkerstats.php:66 bunkerstats.php:78
+msgid "Statistics"
+msgstr "Statistik"
+
+#: bunkerstats.php:71
+msgid "BunkerStats Dashboard"
+msgstr "BunkerStats-instrumentpanel"
+
+#: bunkerstats.php:72
+msgid ""
+"Welcome to BunkerStats! Use the sections below to manage your hockey "
+"prediction game."
+msgstr ""
+"Välkommen till BunkerStats! Använd avsnitten nedan för att hantera ditt "
+"poängligatips."
+
+#: bunkerstats.php:74
+msgid "Add, edit, and copy players between seasons."
+msgstr "Lägg till, redigera och kopiera spelare mellan säsonger."
+
+#: bunkerstats.php:75
+msgid "Manage seasons for your prediction games."
+msgstr "Hantera säsonger."
+
+#: bunkerstats.php:76
+msgid "Create and manage prediction forms for your readers."
+msgstr "Skapa och hantera formulär"
+
+#: bunkerstats.php:77
+msgid "View and review all user submissions."
+msgstr "Granska inlämningar"
+
+#: bunkerstats.php:78
+msgid "View summary statistics for all submissions."
+msgstr "Visa statistik för inlämnade tips"
+
+#: bunkerstats.php:80
+msgid "Shortcodes:"
+msgstr "Shortcodes:"
+
+#: bunkerstats.php:82
+msgid "Display a prediction form on any page or post."
+msgstr "Visa ett formulär på en sida eller ett inlägg."
+
+#: bunkerstats.php:83
+msgid "Show the results table for a form. Add"
+msgstr "Visa resultatet från ett formulär. Lägg till"
+
+#: bunkerstats.php:83
+msgid "for final results."
+msgstr "för slutgiltiga resultatet."
+
+#: bunkerstats.php:105
+msgid "Player updated."
+msgstr "Spelare uppdaterad."
+
+#: bunkerstats.php:109 bunkerstats.php:146 bunkerstats.php:315
+#: bunkerstats.php:336
+msgid "Invalid input."
+msgstr "Ogiltigt värde."
+
+#: bunkerstats.php:115
+msgid "Edit Player"
+msgstr "Redigera spelare"
+
+#: bunkerstats.php:116
+msgid "Name:"
+msgstr "Namn:"
+
+#: bunkerstats.php:117
+msgid "Season:"
+msgstr "Säsong:"
+
+#: bunkerstats.php:119 bunkerstats.php:156 bunkerstats.php:383
+msgid "Select Season"
+msgstr "Välj säsong"
+
+#: bunkerstats.php:125
+msgid "Games Played:"
+msgstr "Spelade matcher:"
+
+#: bunkerstats.php:126
+msgid "Goals:"
+msgstr "Mål:"
+
+#: bunkerstats.php:127
+msgid "Points:"
+msgstr "Poäng:"
+
+#: bunkerstats.php:128
+msgid "Update Player"
+msgstr "Redigera spelare"
+
+#: bunkerstats.php:130
+msgid "Back to Players"
+msgstr "Tillbaka till spelare"
+
+#: bunkerstats.php:144
+msgid "Player added."
+msgstr "Spelare sparad."
+
+#: bunkerstats.php:152 bunkerstats.php:165
+msgid "Add Player"
+msgstr "Lägg till spelare"
+
+#: bunkerstats.php:153 bunkerstats.php:204 bunkerstats.php:271
+#: bunkerstats.php:349 bunkerstats.php:396
+msgid "Name"
+msgstr "Namn"
+
+#: bunkerstats.php:162
+msgid "Games Played"
+msgstr "Spelade matcher"
+
+#: bunkerstats.php:163 bunkerstats.php:207 bunkerstats.php:274
+#: bunkerstats.php:765
+msgid "Goals"
+msgstr "Mål"
+
+#: bunkerstats.php:164 bunkerstats.php:208 bunkerstats.php:275
+#: bunkerstats.php:765
+msgid "Points"
+msgstr "Poäng"
+
+#: bunkerstats.php:179
+msgid "Selected players copied to new season with empty stats."
+msgstr "Spelare kopierade till ny säsong."
+
+#: bunkerstats.php:181
+msgid "Please select players and a target season."
+msgstr "Välj spelare och ny säsong. "
+
+#: bunkerstats.php:188
+msgid "Copy Selected Players to New Season"
+msgstr "Kopiera valda spelare till ny säsong"
+
+#: bunkerstats.php:191
+msgid "Select Target Season"
+msgstr "Välj ny säsong"
+
+#: bunkerstats.php:196
+msgid "Copy to New Season"
+msgstr "Kopiera till ny säsong"
+
+#: bunkerstats.php:205 bunkerstats.php:272 bunkerstats.php:396
+msgid "Season"
+msgstr "Säsong"
+
+#: bunkerstats.php:206 bunkerstats.php:273
+msgid "Games"
+msgstr "Matcher"
+
+#: bunkerstats.php:268
+msgid "All Players"
+msgstr "Alla spelare"
+
+#: bunkerstats.php:276 bunkerstats.php:349
+msgid "Actions"
+msgstr "Hantera"
+
+#: bunkerstats.php:287 bunkerstats.php:354 bunkerstats.php:508
+#: bunkerstats.php:517
+msgid "Edit"
+msgstr "Redigera"
+
+#: bunkerstats.php:312
+msgid "Season updated."
+msgstr "Säsong uppdaterad."
+
+#: bunkerstats.php:320
+msgid "Edit Season"
+msgstr "Redigera säsong"
+
+#: bunkerstats.php:321
+msgid "Season Name:"
+msgstr "Säsongsnamn:"
+
+#: bunkerstats.php:322
+msgid "Update Season"
+msgstr "Redigera säsong"
+
+#: bunkerstats.php:324
+msgid "Back to Seasons"
+msgstr "Tillbaka till säsonger"
+
+#: bunkerstats.php:334
+msgid "Season added."
+msgstr "Säsong tillagd."
+
+#: bunkerstats.php:341 bunkerstats.php:343
+msgid "Add Season"
+msgstr "Lägg till säsong"
+
+#: bunkerstats.php:342
+msgid "Season Name"
+msgstr "Säsongsnamn"
+
+#: bunkerstats.php:348
+msgid "All Seasons"
+msgstr "Alla säsonger"
+
+#: bunkerstats.php:371
+msgid "Form created."
+msgstr "Formulär skapat."
+
+#: bunkerstats.php:373
+msgid "Invalid input or no players in selected season."
+msgstr "Ogiltigt värde eller inga spelare valda. "
+
+#: bunkerstats.php:379 bunkerstats.php:391
+msgid "Create Form"
+msgstr "Skapa formulär"
+
+#: bunkerstats.php:380
+msgid "Form Name"
+msgstr "Formulärnamn"
+
+#: bunkerstats.php:389 bunkerstats.php:396
+msgid "Eliminator Question"
+msgstr "Utslagsfråga"
+
+#: bunkerstats.php:390
+msgid "All players from the selected season will be included in the form."
+msgstr ""
+"Alla spelare från den valda säsonger kommer att inkluderas i formuläret."
+
+#: bunkerstats.php:395
+msgid "All Forms"
+msgstr "Alla formulär"
+
+#: bunkerstats.php:425 bunkerstats.php:564
+msgid "Select Form"
+msgstr "Välj formulär"
+
+#: bunkerstats.php:437
+msgid "Submission not found."
+msgstr "Inlämning hittades inte."
+
+#: bunkerstats.php:465
+msgid "Submission updated."
+msgstr "Inlämning uppdaterad."
+
+#: bunkerstats.php:469 bunkerstats.php:755
+msgid "Invalid input. Please check your entries."
+msgstr "Ogiltigt värde. Dubbelkolla dina värden."
+
+#: bunkerstats.php:474
+msgid "Edit Submission"
+msgstr "Redigera inlämning"
+
+#: bunkerstats.php:475
+msgid "Alias:"
+msgstr "Alias:"
+
+#: bunkerstats.php:476 bunkerstats.php:764
+msgid "Email:"
+msgstr "E-post:"
+
+#: bunkerstats.php:477
+msgid "Eliminator Answer:"
+msgstr "Utslagsfråga svar:"
+
+#: bunkerstats.php:478 bunkerstats.php:536 bunkerstats.php:666
+#: bunkerstats.php:686 bunkerstats.php:765
+msgid "Player"
+msgstr "Spelare"
+
+#: bunkerstats.php:478
+msgid "Guessed Goals"
+msgstr "Tippade mål"
+
+#: bunkerstats.php:478
+msgid "Guessed Points"
+msgstr "Tippade poäng"
+
+#: bunkerstats.php:493
+msgid "Update Submission"
+msgstr "Uppdatera inlämning"
+
+#: bunkerstats.php:495
+msgid "Back to Submissions"
+msgstr "Tillbaka till inlämningar"
+
+#: bunkerstats.php:506
+msgid "Submissions for Form:"
+msgstr "Inlämningar för formulär:"
+
+#: bunkerstats.php:508 bunkerstats.php:812
+msgid "Alias"
+msgstr "Alias"
+
+#: bunkerstats.php:508
+msgid "Email"
+msgstr "E-post"
+
+#: bunkerstats.php:508
+msgid "Eliminator Answer"
+msgstr "Utslagsfråga"
+
+#: bunkerstats.php:508
+msgid "Submitted At"
+msgstr "Inskickad"
+
+#: bunkerstats.php:508 bunkerstats.php:516
+msgid "View"
+msgstr "Granska"
+
+#: bunkerstats.php:527
+msgid "BunkerStats Statistics"
+msgstr "BunkerStats Statistik"
+
+#: bunkerstats.php:537
+msgid "Average"
+msgstr "Medel"
+
+#: bunkerstats.php:538
+msgid "Variance"
+msgstr "Varians"
+
+#: bunkerstats.php:539 bunkerstats.php:668 bunkerstats.php:688
+msgid "Min"
+msgstr "Min"
+
+#: bunkerstats.php:540 bunkerstats.php:669 bunkerstats.php:689
+msgid "Max"
+msgstr "Max"
+
+#: bunkerstats.php:541 bunkerstats.php:667 bunkerstats.php:687
+msgid "Spread"
+msgstr "Spridning"
+
+#: bunkerstats.php:542
+msgid "Count"
+msgstr "Antal"
+
+#: bunkerstats.php:571
+msgid "Select a form to view statistics."
+msgstr "Välj ett formulär"
+
+#: bunkerstats.php:577 bunkerstats.php:729
+msgid "Form not found."
+msgstr "Formulär hittades inte."
+
+#: bunkerstats.php:588
+msgid "No submissions yet."
+msgstr "Inga inlämningar än."
+
+#: bunkerstats.php:644
+msgid "Player Prediction Statistics"
+msgstr "Spelartips Statistik"
+
+#: bunkerstats.php:664
+msgid "Players with Biggest Spread"
+msgstr "Spelare med störst spridning"
+
+#: bunkerstats.php:684
+msgid "Players with Smallest Spread (min 2 guesses)"
+msgstr "Spelare med minst spridning (minst 2 tips)"
+
+#: bunkerstats.php:726
+msgid "No form specified."
+msgstr "Inget formulär valt."
+
+#: bunkerstats.php:734
+msgid "Security check failed. Please try again."
+msgstr "Säkerhetskontroll misslyckades. Försök igen. "
+
+#: bunkerstats.php:753
+msgid "Thank you for your submission!"
+msgstr "Tack för ditt tips!"
+
+#: bunkerstats.php:763
+msgid "Name (alias):"
+msgstr "Namn (alias):"
+
+#: bunkerstats.php:777
+msgid "Eliminator Question:"
+msgstr "Utslagsfråga:"
+
+#: bunkerstats.php:778
+msgid "Submit"
+msgstr "Skicka in"
+
+#: bunkerstats.php:812
+msgid "Total Score"
+msgstr "Totalpoäng"
+
+#~ msgid "Submission Details"
+#~ msgstr "Inlämningsdetaljer"
+
+#~ msgid "Submitted At:"
+#~ msgstr "Inskickad:"
