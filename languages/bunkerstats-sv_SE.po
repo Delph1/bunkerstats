@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: BunkerStats Prediction Plugin 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bunkerstats\n"
 "POT-Creation-Date: 2025-11-06T19:18:59+01:00\n"
-"PO-Revision-Date: 2025-11-06 19:28+0100\n"
+"PO-Revision-Date: 2025-11-06 21:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -141,7 +141,7 @@ msgstr "Poäng:"
 
 #: bunkerstats.php:128
 msgid "Update Player"
-msgstr "Redigera spelare"
+msgstr "Uppdatera spelare"
 
 #: bunkerstats.php:130
 msgid "Back to Players"
