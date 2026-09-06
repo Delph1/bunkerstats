@@ -359,10 +359,75 @@ if (is_admin()) {
 
     function bunkerstats_admin_forms() {
         echo '<div class="wrap"><h1>' . esc_html__('Forms', 'bunkerstats') . '</h1>';
+
+        if (isset($_GET['delete'])) {
+            $form_id = intval($_GET['delete']);
+            $form = BunkerStats_Form::get($form_id);
+            if ($form && check_admin_referer('bunkerstats_delete_form_' . $form_id)) {
+                foreach (BunkerStats_Submission::get_all($form_id) as $submission) {
+                    BunkerStats_Submission::delete($submission->id);
+                }
+                BunkerStats_Form::delete($form_id);
+                echo '<div class="updated"><p>' . esc_html__('Form deleted.', 'bunkerstats') . '</p></div>';
+            } elseif (!$form) {
+                echo '<div class="error"><p>' . esc_html__('Form not found.', 'bunkerstats') . '</p></div>';
+            }
+        }
+
+        if (isset($_GET['edit'])) {
+            $form_id = intval($_GET['edit']);
+            $form = BunkerStats_Form::get($form_id);
+            if (!$form) {
+                echo '<div class="error"><p>' . esc_html__('Form not found.', 'bunkerstats') . '</p></div></div>';
+                return;
+            }
+
+            $seasons = BunkerStats_Season::get_all();
+            if (isset($_POST['bunkerstats_update_form']) && check_admin_referer('bunkerstats_update_form_nonce_' . $form_id)) {
+                $name = sanitize_text_field(wp_unslash($_POST['name']));
+                $season_id = intval($_POST['season_id']);
+                $eliminator_question = sanitize_text_field(wp_unslash($_POST['eliminator_question']));
+                $player_objs = BunkerStats_Player::get_all($season_id);
+                $player_ids = array_map(function($player) { return $player->id; }, $player_objs);
+
+                if ($name && $season_id && $eliminator_question && !empty($player_ids)) {
+                    BunkerStats_Form::update($form_id, [
+                        'name' => $name,
+                        'season_id' => $season_id,
+                        'eliminator_question' => $eliminator_question
+                    ], $player_ids);
+                    $form = BunkerStats_Form::get($form_id);
+                    echo '<div class="updated"><p>' . esc_html__('Form updated.', 'bunkerstats') . '</p></div>';
+                } else {
+                    echo '<div class="error"><p>' . esc_html__('Invalid input or no players in selected season.', 'bunkerstats') . '</p></div>';
+                }
+            }
+
+            echo '<form method="post">';
+            wp_nonce_field('bunkerstats_update_form_nonce_' . $form_id);
+            echo '<h2>' . esc_html__('Edit Form', 'bunkerstats') . '</h2>
+                <p><input type="text" name="name" value="' . esc_attr($form->name) . '" placeholder="' . esc_attr__('Form Name', 'bunkerstats') . '" required></p>
+                <p>
+                    <select name="season_id" required>
+                        <option value="">' . esc_html__('Select Season', 'bunkerstats') . '</option>';
+            foreach ($seasons as $season) {
+                echo '<option value="' . esc_attr($season->id) . '"' . selected($form->season_id, $season->id, false) . '>' . esc_html($season->name) . '</option>';
+            }
+            echo '  </select>
+                </p>
+                <p><input type="text" name="eliminator_question" value="' . esc_attr($form->eliminator_question) . '" placeholder="' . esc_attr__('Eliminator Question', 'bunkerstats') . '" required></p>
+                <p><em>' . esc_html__('All players from the selected season will be included in the form.', 'bunkerstats') . '</em></p>
+                <p><input type="submit" name="bunkerstats_update_form" class="button button-primary" value="' . esc_attr__('Update Form', 'bunkerstats') . '"></p>
+            </form>
+            <p><a href="' . esc_url(admin_url('admin.php?page=bunkerstats_forms')) . '">&laquo; ' . esc_html__('Back to Forms', 'bunkerstats') . '</a></p>
+            </div>';
+            return;
+        }
+
         if (isset($_POST['bunkerstats_add_form']) && check_admin_referer('bunkerstats_add_form_nonce')) {
-            $name = sanitize_text_field($_POST['name']);
+            $name = sanitize_text_field(wp_unslash($_POST['name']));
             $season_id = intval($_POST['season_id']);
-            $eliminator_question = sanitize_text_field($_POST['eliminator_question']);
+            $eliminator_question = sanitize_text_field(wp_unslash($_POST['eliminator_question']));
             // Get all player IDs for the selected season
             $player_objs = BunkerStats_Player::get_all($season_id);
             $player_ids = array_map(function($p) { return $p->id; }, $player_objs);
@@ -393,7 +458,7 @@ if (is_admin()) {
 
         $forms = BunkerStats_Form::get_all();
         echo '<h2>' . esc_html__('All Forms', 'bunkerstats') . '</h2><table class="widefat"><thead><tr>
-            <th>ID</th><th>' . esc_html__('Name', 'bunkerstats') . '</th><th>' . esc_html__('Season', 'bunkerstats') . '</th><th>' . esc_html__('Eliminator Question', 'bunkerstats') . '</th><th>' . esc_html__('Players', 'bunkerstats') . '</th></tr></thead><tbody>';
+            <th>ID</th><th>' . esc_html__('Name', 'bunkerstats') . '</th><th>' . esc_html__('Season', 'bunkerstats') . '</th><th>' . esc_html__('Eliminator Question', 'bunkerstats') . '</th><th>' . esc_html__('Players', 'bunkerstats') . '</th><th>' . esc_html__('Actions', 'bunkerstats') . '</th></tr></thead><tbody>';
         foreach ($forms as $form) {
             $season = BunkerStats_Season::get($form->season_id);
             $form_obj = BunkerStats_Form::get($form->id);
@@ -410,6 +475,8 @@ if (is_admin()) {
                 <td>' . esc_html($season ? $season->name : '') . '</td>
                 <td>' . esc_html($form->eliminator_question) . '</td>
                 <td>' . esc_html(implode(', ', $player_names)) . '</td>
+                <td><a href="' . esc_url(admin_url('admin.php?page=bunkerstats_forms&edit=' . $form->id)) . '">' . esc_html__('Edit', 'bunkerstats') . '</a> |
+                    <a href="' . esc_url(wp_nonce_url(admin_url('admin.php?page=bunkerstats_forms&delete=' . $form->id), 'bunkerstats_delete_form_' . $form->id)) . '" onclick="return confirm(\'' . esc_js(__('Are you sure you want to delete this form and all submissions?', 'bunkerstats')) . '\');">' . esc_html__('Delete', 'bunkerstats') . '</a></td>
             </tr>';
         }
         echo '</tbody></table></div>';
