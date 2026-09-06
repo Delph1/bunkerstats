@@ -830,13 +830,22 @@ add_shortcode('bunkerstats_form', function($atts) {
     $output .= '<p><label>' . esc_html__('Name (alias):', 'bunkerstats') . '<br><input type="text" name="alias" required></label></p>';
     $output .= '<p><label>' . esc_html__('Email:', 'bunkerstats') . '<br><input type="email" name="email" required></label></p>';
     $output .= '<table class="widefat"><thead><tr><th>' . esc_html__('Player', 'bunkerstats') . '</th><th>' . esc_html__('Goals', 'bunkerstats') . '</th><th>' . esc_html__('Points', 'bunkerstats') . '</th></tr></thead><tbody>';
+    $form_players = [];
     foreach ($form->player_ids as $pid) {
         $player = BunkerStats_Player::get($pid);
         if ($player) {
+            $form_players[] = $player;
+        }
+    }
+    usort($form_players, function($player_a, $player_b) {
+        return strcasecmp($player_a->name, $player_b->name);
+    });
+    foreach ($form_players as $player) {
+        if ($player) {
             $output .= '<tr>
                 <td>' . esc_html($player->name) . '</td>
-                <td><input type="number" name="goals[' . esc_attr($pid) . ']" min="0" required></td>
-                <td><input type="number" name="points[' . esc_attr($pid) . ']" min="0" required></td>
+                <td><input type="number" name="goals[' . esc_attr($player->id) . ']" min="0" required></td>
+                <td><input type="number" name="points[' . esc_attr($player->id) . ']" min="0" required></td>
             </tr>';
         }
     }
