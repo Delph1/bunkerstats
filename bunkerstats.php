@@ -2,7 +2,7 @@
 /*
 Plugin Name: BunkerStats Prediction Plugin
 Description: Allow readers to predict hockey player stats for a season.
-Version: 1.1
+Version: 1.2
 Author: Andreas Galistel
 
 Shortcodes:
