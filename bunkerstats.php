@@ -850,7 +850,7 @@ add_shortcode('bunkerstats_form', function($atts) {
         }
     }
     $output .= '</tbody></table>';
-    $output .= '<p><label>' . esc_html__('Eliminator Question:', 'bunkerstats') . '<br><input type="text" name="eliminator_answer" required></label></p>';
+    $output .= '<p><label>' . esc_html__('Eliminator Question:', 'bunkerstats') . ' ' . esc_html($form->eliminator_question) . '<br><input type="text" name="eliminator_answer" required></label></p>';
     $output .= '<p><input type="submit" name="bunkerstats_submit_form" class="button button-primary" value="' . esc_attr__('Submit', 'bunkerstats') . '"></p>';
     $output .= '</form>';
 
