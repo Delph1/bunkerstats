@@ -495,11 +495,22 @@ if (is_admin()) {
         }
         echo '</select></form>';
 
+        if (isset($_GET['delete'])) {
+            $submission_id = intval($_GET['delete']);
+            if (check_admin_referer('bunkerstats_delete_submission_' . $submission_id)) {
+                if (BunkerStats_Submission::delete($submission_id)) {
+                    echo '<div class="updated"><p>' . esc_html__('Submission deleted.', 'bunkerstats') . '</p></div>';
+                } else {
+                    echo '<div class="error"><p>' . esc_html__('Submission not found.', 'bunkerstats') . '</p></div>';
+                }
+            }
+        }
+
         // Handle edit submission
         if (isset($_GET['edit'])) {
             $submission_id = intval($_GET['edit']);
             $submission = BunkerStats_Submission::get($submission_id);
-            $form = BunkerStats_Form::get($submission->form_id);
+            $form = $submission ? BunkerStats_Form::get($submission->form_id) : null;
             if (!$submission || !$form) {
                 echo '<div class="error"><p>' . esc_html__('Submission not found.', 'bunkerstats') . '</p></div>';
                 echo '</div>';
@@ -522,7 +533,6 @@ if (is_admin()) {
                     if ($goals < 0 || $points < 0) $valid = false;
                 }
                 if ($valid) {
-                    // Update submission (assumes BunkerStats_Submission::update exists)
                     BunkerStats_Submission::update($submission_id, [
                         'alias' => $alias,
                         'email' => $email,
@@ -530,7 +540,6 @@ if (is_admin()) {
                         'player_guesses' => $player_guesses
                     ]);
                     echo '<div class="updated"><p>' . esc_html__('Submission updated.', 'bunkerstats') . '</p></div>';
-                    // Refresh submission
                     $submission = BunkerStats_Submission::get($submission_id);
                 } else {
                     echo '<div class="error"><p>' . esc_html__('Invalid input. Please check your entries.', 'bunkerstats') . '</p></div>';
@@ -559,20 +568,17 @@ if (is_admin()) {
             echo '</tbody></table>';
             echo '<p><input type="submit" name="bunkerstats_update_submission" class="button button-primary" value="' . esc_attr__('Update Submission', 'bunkerstats') . '"></p>';
             echo '</form>';
-            echo '<p><a href="' . admin_url('admin.php?page=bunkerstats_submissions&form_id=' . $form->id) . '">&laquo; ' . esc_html__('Back to Submissions', 'bunkerstats') . '</a></p>';
+            echo '<p><a href="' . esc_url(wp_nonce_url(admin_url('admin.php?page=bunkerstats_submissions&form_id=' . $form->id))) . '">&laquo; ' . esc_html__('Back to Submissions', 'bunkerstats') . '</a></p>';
+            echo '<p><a href="' . esc_url(wp_nonce_url(admin_url('admin.php?page=bunkerstats_submissions&form_id=' . $form->id . '&delete=' . $submission->id), 'bunkerstats_delete_submission_' . $submission->id)) . '" onclick="return confirm(\'' . esc_js(__('Are you sure you want to delete this submission?', 'bunkerstats')) . '\');">' . esc_html__('Delete Submission', 'bunkerstats') . '</a></p>';
             echo '</div>';
             return;
         }
 
-        // ...existing code for listing submissions and viewing details...
-        // Add edit link to each submission row:
-        // <td><a href="' . admin_url('admin.php?page=bunkerstats_submissions&form_id=' . $form_id . '&edit=' . $sub->id) . '">' . esc_html__('Edit', 'bunkerstats') . '</a></td>
-        // ...existing code...
         if ($form_id) {
             $submissions = BunkerStats_Submission::get_all($form_id);
             echo '<h2>' . esc_html__('Submissions for Form:', 'bunkerstats') . ' ' . esc_html(BunkerStats_Form::get($form_id)->name) . '</h2>';
             echo '<table class="widefat"><thead><tr>
-                <th>ID</th><th>' . esc_html__('Alias', 'bunkerstats') . '</th><th>' . esc_html__('Email', 'bunkerstats') . '</th><th>' . esc_html__('Eliminator Answer', 'bunkerstats') . '</th><th>' . esc_html__('Submitted At', 'bunkerstats') . '</th><th>' . esc_html__('View', 'bunkerstats') . '</th><th>' . esc_html__('Edit', 'bunkerstats') . '</th></tr></thead><tbody>';
+                <th>ID</th><th>' . esc_html__('Alias', 'bunkerstats') . '</th><th>' . esc_html__('Email', 'bunkerstats') . '</th><th>' . esc_html__('Eliminator Answer', 'bunkerstats') . '</th><th>' . esc_html__('Submitted At', 'bunkerstats') . '</th><th>' . esc_html__('Edit', 'bunkerstats') . '</th><th>' . esc_html__('Delete', 'bunkerstats') . '</th></tr></thead><tbody>';
             foreach ($submissions as $sub) {
                 echo '<tr>
                     <td>' . esc_html($sub->id) . '</td>
@@ -580,14 +586,12 @@ if (is_admin()) {
                     <td>' . esc_html($sub->email) . '</td>
                     <td>' . esc_html($sub->eliminator_answer) . '</td>
                     <td>' . esc_html($sub->submitted_at) . '</td>
-                    <td><a href="' . admin_url('admin.php?page=bunkerstats_submissions&form_id=' . $form_id . '&view=' . $sub->id) . '">' . esc_html__('View', 'bunkerstats') . '</a></td>
-                    <td><a href="' . admin_url('admin.php?page=bunkerstats_submissions&form_id=' . $form_id . '&edit=' . $sub->id) . '">' . esc_html__('Edit', 'bunkerstats') . '</a></td>
+                    <td><a href="' . esc_url(wp_nonce_url(admin_url('admin.php?page=bunkerstats_submissions&form_id=' . $form_id . '&edit=' . $sub->id), 'bunkerstats_edit_submission_' . $sub->id)) . '">' . esc_html__('Edit', 'bunkerstats') . '</a></td>
+                    <td><a href="' . esc_url(wp_nonce_url(admin_url('admin.php?page=bunkerstats_submissions&form_id=' . $form_id . '&delete=' . $sub->id), 'bunkerstats_delete_submission_' . $sub->id)) . '" onclick="return confirm(\'' . esc_js(__('Are you sure you want to delete this submission?', 'bunkerstats')) . '\');">' . esc_html__('Delete', 'bunkerstats') . '</a></td>
                 </tr>';
             }
             echo '</tbody></table>';
-            // ...existing code for view details...
         }
-        // ...existing code...
     }
 
     function bunkerstats_admin_statistics() {
